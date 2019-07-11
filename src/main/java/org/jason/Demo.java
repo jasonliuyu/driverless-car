@@ -13,11 +13,16 @@ public class Demo {
         Park park = new Park(xlength, ylength);
         Car car = new Auto();
         car.initPosition(park);
-        System.out.println("Enter w forward, t clockwise: ");
         while(true){
-            String command = scanner.nextLine();
-            car.move(command);
-            System.out.println("Enter w forward, t clockwise: ");
+            try {
+                System.out.println("Enter w forward, t clockwise: ");
+                String command = scanner.nextLine();
+                car.move(command);
+            }catch (Exception e){
+                e.printStackTrace();
+                continue;
+            }
+
         }
 
     }
